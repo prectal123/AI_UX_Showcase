@@ -1,33 +1,33 @@
 // Mock Data
 const MOCK_DATA = {
     artists: [
-        { id: 1, name: 'Lofi Girl', img: 'https://images.unsplash.com/photo-1514525253361-bee8718a342b?w=200&h=200&fit=crop' },
-        { id: 2, name: 'Neon Soul', img: 'https://images.unsplash.com/photo-1493225255756-d9584f8606e9?w=200&h=200&fit=crop' },
-        { id: 3, name: 'The Midnight', img: 'https://images.unsplash.com/photo-1459749411177-042180ce673c?w=200&h=200&fit=crop' },
-        { id: 4, name: 'Synth Wave', img: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=200&h=200&fit=crop' },
-        { id: 5, name: 'Ethereal', img: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=200&h=200&fit=crop' }
+        { id: 1, name: 'Lofi Girl', img: 'https://picsum.photos/seed/music1/200/200' },
+        { id: 2, name: 'Neon Soul', img: 'https://picsum.photos/seed/music2/200/200' },
+        { id: 3, name: 'The Midnight', img: 'https://picsum.photos/seed/music3/200/200' },
+        { id: 4, name: 'Synth Wave', img: 'https://picsum.photos/seed/music4/200/200' },
+        { id: 5, name: 'Ethereal', img: 'https://picsum.photos/seed/music5/200/200' }
     ],
     tracks: [
-        { id: 1, title: 'Midnight City', artist: 'Neon Soul', albumArt: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=400&h=400&fit=crop', duration: 225 },
-        { id: 2, title: 'Coffee & Dreams', artist: 'Lofi Girl', albumArt: 'https://images.unsplash.com/photo-1514525253361-bee8718a342b?w=400&h=400&fit=crop', duration: 180 },
-        { id: 3, title: 'Electric Love', artist: 'The Midnight', albumArt: 'https://images.unsplash.com/photo-1459749411177-042180ce673c?w=400&h=400&fit=crop', duration: 210 },
-        { id: 4, title: 'Stardust', artist: 'Synth Wave', albumArt: 'https://images.unsplash.com/photo-1493225255756-d9584f8606e9?w=400&h=400&fit=crop', duration: 245 },
-        { id: 5, title: 'Lost in Echoes', artist: 'Ethereal', albumArt: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&h=400&fit=crop', duration: 195 },
-        { id: 6, title: 'After Hours', artist: 'Neon Soul', albumArt: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop', duration: 200 },
-        { id: 7, title: 'Rainy Sunday', artist: 'Lofi Girl', albumArt: 'https://images.unsplash.com/photo-1420161907993-e2c141d3bcdd?w=400&h=400&fit=crop', duration: 165 }
+        { id: 1, title: 'Midnight City', artist: 'Neon Soul', albumArt: 'https://picsum.photos/seed/music6/400/400', duration: 225 },
+        { id: 2, title: 'Coffee & Dreams', artist: 'Lofi Girl', albumArt: 'https://picsum.photos/seed/music7/400/400', duration: 180 },
+        { id: 3, title: 'Electric Love', artist: 'The Midnight', albumArt: 'https://picsum.photos/seed/music8/400/400', duration: 210 },
+        { id: 4, title: 'Stardust', artist: 'Synth Wave', albumArt: 'https://picsum.photos/seed/music9/400/400', duration: 245 },
+        { id: 5, title: 'Lost in Echoes', artist: 'Ethereal', albumArt: 'https://picsum.photos/seed/music10/400/400', duration: 195 },
+        { id: 6, title: 'After Hours', artist: 'Neon Soul', albumArt: 'https://picsum.photos/seed/music11/400/400', duration: 200 },
+        { id: 7, title: 'Rainy Sunday', artist: 'Lofi Girl', albumArt: 'https://picsum.photos/seed/music12/400/400', duration: 165 }
     ],
     genres: [
-        { name: 'Pop', color: '#E91E63', img: 'https://images.unsplash.com/photo-1514525253361-bee8718a342b?w=100' },
-        { name: 'Lo-Fi', color: '#3F51B5', img: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=100' },
-        { name: 'Electronic', color: '#9C27B0', img: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100' },
-        { name: 'Rock', color: '#FF9800', img: 'https://images.unsplash.com/photo-1459749411177-042180ce673c?w=100' },
-        { name: 'Jazz', color: '#795548', img: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=100' },
-        { name: 'Hip Hop', color: '#2196F3', img: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=100' }
+        { name: 'Pop', color: '#E91E63', img: 'https://picsum.photos/seed/pop/100/100' },
+        { name: 'Lo-Fi', color: '#3F51B5', img: 'https://picsum.photos/seed/lofi/100/100' },
+        { name: 'Electronic', color: '#9C27B0', img: 'https://picsum.photos/seed/electro/100/100' },
+        { name: 'Rock', color: '#FF9800', img: 'https://picsum.photos/seed/rock/100/100' },
+        { name: 'Jazz', color: '#795548', img: 'https://picsum.photos/seed/jazz/100/100' },
+        { name: 'Hip Hop', color: '#2196F3', img: 'https://picsum.photos/seed/hiphop/100/100' }
     ],
     playlists: [
-        { id: 1, name: 'Daily Mix 1', owner: 'SonicStream', img: 'https://images.unsplash.com/photo-1493225255756-d9584f8606e9?w=200&h=200&fit=crop' },
-        { id: 2, name: 'Discover Weekly', owner: 'SonicStream', img: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=200&h=200&fit=crop' },
-        { id: 3, name: 'Chill Vibes', owner: 'Alex Rivera', img: 'https://images.unsplash.com/photo-1420161907993-e2c141d3bcdd?w=200&h=200&fit=crop' }
+        { id: 1, name: 'Daily Mix 1', owner: 'SonicStream', img: 'https://picsum.photos/seed/mix1/200/200' },
+        { id: 2, name: 'Discover Weekly', owner: 'SonicStream', img: 'https://picsum.photos/seed/mix2/200/200' },
+        { id: 3, name: 'Chill Vibes', owner: 'Alex Rivera', img: 'https://picsum.photos/seed/mix3/200/200' }
     ]
 };
 
