@@ -6,7 +6,7 @@ const restaurants = [
     rating: 4.8,
     deliveryTime: "25-35분",
     deliveryFee: "3,000원",
-    image: "/Users/hajun/.gemini/antigravity/brain/2ace808a-0353-45c7-b6d0-3d05fb704270/delicious_pepperoni_pizza_1777029660221.png",
+    image: "delicious_pepperoni_pizza.png",
     category: "양식",
     menu: [
       { id: 101, name: "페퍼로니 피자", price: 24900, description: "진한 토마토 소스와 듬뿍 올라간 페퍼로니", image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=200&h=200&fit=crop" },
@@ -19,7 +19,7 @@ const restaurants = [
     rating: 4.9,
     deliveryTime: "20-30분",
     deliveryFee: "2,000원",
-    image: "/Users/hajun/.gemini/antigravity/brain/2ace808a-0353-45c7-b6d0-3d05fb704270/gourmet_cheese_burger_1777029673917.png",
+    image: "gourmet_cheese_burger.png",
     category: "패스트푸드",
     menu: [
       { id: 201, name: "시그니처 치즈버거", price: 9800, description: "육즙 가득한 패티와 체다 치즈", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop" },
