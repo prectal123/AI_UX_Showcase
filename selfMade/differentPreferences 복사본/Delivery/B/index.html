@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoFood - Predictable Delivery</title>
+  <meta name="description" content="Consistent and predictable food delivery experience.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header" id="header">
+      <div id="header-left">
+        <h1 id="header-title">GoFood</h1>
+      </div>
+      <div id="header-right">
+        <button id="search-btn" class="header-btn" title="Search">
+          <i data-lucide="search"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+      <!-- Views will be injected here -->
+    </main>
+
+    <!-- Cart Floating Button (Global) -->
+    <div id="cart-floating" class="cart-floating hidden">
+      <div class="cart-info">
+        <span id="cart-count">0</span>개 담겼습니다
+      </div>
+      <div class="cart-price">
+        <span id="cart-total">0</span>원 결제하기
+      </div>
+    </div>
+
+    <!-- Toast Notification System -->
+    <div id="toast" class="toast">
+      <span id="toast-message"></span>
+      <button id="toast-undo" class="hidden" style="color: var(--accent); font-weight: 700;">되돌리기</button>
+    </div>
+
+    <!-- Modal for Conflicts/Confirmations -->
+    <div id="modal-overlay" class="modal-overlay">
+      <div class="modal">
+        <h2 id="modal-title" style="margin-bottom: 12px;">알림</h2>
+        <p id="modal-message" style="margin-bottom: 24px;"></p>
+        <div class="flex-gap">
+          <button id="modal-cancel" class="btn-ghost" style="flex: 1; border: 1px solid var(--border); border-radius: 8px;">취소</button>
+          <button id="modal-confirm" class="btn-primary" style="flex: 1;">확인</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-view="home">
+        <i data-lucide="home"></i>
+        <span>홈</span>
+      </button>
+      <button class="nav-item" data-view="search">
+        <i data-lucide="search"></i>
+        <span>검색</span>
+      </button>
+      <button class="nav-item" data-view="orders">
+        <i data-lucide="shopping-bag"></i>
+        <span>주문내역</span>
+      </button>
+      <button class="nav-item" data-view="profile">
+        <i data-lucide="user"></i>
+        <span>마이</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      lucide.createIcons();
+    });
+  </script>
+
+    <!-- Floating Back to Portal Button -->
+    <style>
+        .back-to-portal-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(5px);
+        }
+        .back-to-portal-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #0f172a;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+    </style>
+    <a href="../../../../../index.html" class="back-to-portal-btn">
+        <span>🏠</span> Showcase Portal
+    </a>
+
+</body>
+</html>

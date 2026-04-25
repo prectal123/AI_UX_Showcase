@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicShare | Music Player & Sharing</title>
+    <meta name="description" content="A premium music sharing and playback prototype for music lovers.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <div id="app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-wave-square"></i>
+                <span>SonicShare</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-view="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item" data-view="explore">
+                    <i class="fas fa-compass"></i>
+                    <span>Explore</span>
+                </a>
+                <a href="#" class="nav-item" data-view="library">
+                    <i class="fas fa-book-open"></i>
+                    <span>Library</span>
+                </a>
+                <a href="#" class="nav-item" data-view="sharing">
+                    <i class="fas fa-share-nodes"></i>
+                    <span>Shared with Me</span>
+                </a>
+            </nav>
+            <div class="sidebar-section">
+                <h3 class="section-title">Playlists</h3>
+                <div class="playlist-list">
+                    <a href="#" class="playlist-item" data-playlist="1">Chill Vibes</a>
+                    <a href="#" class="playlist-item" data-playlist="2">Workout Mix</a>
+                    <a href="#" class="playlist-item" data-playlist="3">Midnight Jazz</a>
+                    <a href="#" class="playlist-item" data-playlist="4">Indie Gems</a>
+                </div>
+                <button class="btn-create-playlist">
+                    <i class="fas fa-plus"></i> Create Playlist
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="global-search" placeholder="Search for songs, artists, or friends...">
+                </div>
+                <div class="user-controls">
+                    <button id="btn-share-music" class="btn-primary">
+                        <i class="fas fa-share"></i> Share Music
+                    </button>
+                    <div class="profile-badge">
+                        <img src="https://i.pravatar.cc/150?u=antigravity" alt="User Profile">
+                        <span>Alex Chen</span>
+                    </div>
+                </div>
+            </header>
+
+            <div id="view-container">
+                <!-- Content will be dynamically injected here -->
+            </div>
+        </main>
+
+        <!-- Player Bar -->
+        <footer class="player-bar">
+            <div class="now-playing">
+                <img src="https://picsum.photos/seed/music1/60/60" alt="Album Art" id="player-art">
+                <div class="track-info">
+                    <h4 id="player-title">Select a track</h4>
+                    <p id="player-artist">Unknown Artist</p>
+                </div>
+                <button class="btn-like">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button class="btn-icon"><i class="fas fa-shuffle"></i></button>
+                    <button class="btn-icon" id="btn-prev"><i class="fas fa-step-backward"></i></button>
+                    <button class="btn-play-pause" id="btn-play">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="btn-icon" id="btn-next"><i class="fas fa-step-forward"></i></button>
+                    <button class="btn-icon"><i class="fas fa-repeat"></i></button>
+                </div>
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progress-fill"></div>
+                    </div>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-controls">
+                <button class="btn-icon"><i class="fas fa-list-ul"></i></button>
+                <button class="btn-icon"><i class="fas fa-desktop"></i></button>
+                <i class="fas fa-volume-high"></i>
+                <div class="volume-bar-bg">
+                    <div class="volume-bar-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Share Modal (Hidden by default) -->
+        <div id="share-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Share with Friends</h2>
+                    <button class="btn-close-modal"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <p>Select a song to share</p>
+                    <select id="share-song-select">
+                        <option value="">Choose a track...</option>
+                    </select>
+                    <p>Choose friends</p>
+                    <div class="friends-list">
+                        <label class="friend-item">
+                            <input type="checkbox" value="Sarah"> 
+                            <img src="https://i.pravatar.cc/150?u=sarah" alt="Sarah">
+                            <span>Sarah Miller</span>
+                        </label>
+                        <label class="friend-item">
+                            <input type="checkbox" value="Jason"> 
+                            <img src="https://i.pravatar.cc/150?u=jason" alt="Jason">
+                            <span>Jason Park</span>
+                        </label>
+                        <label class="friend-item">
+                            <input type="checkbox" value="Emma"> 
+                            <img src="https://i.pravatar.cc/150?u=emma" alt="Emma">
+                            <span>Emma Wilson</span>
+                        </label>
+                    </div>
+                    <textarea id="share-message" placeholder="Add a note..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary btn-close-modal">Cancel</button>
+                    <button id="btn-confirm-share" class="btn-primary">Send to Friends</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

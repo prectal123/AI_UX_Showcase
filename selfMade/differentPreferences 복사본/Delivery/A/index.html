@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivo - 가장 쉬운 음식 배달</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header id="main-header">
+            <div class="location-selector" role="button" aria-label="배달 주소 변경">
+                <span class="location-label">배달 주소</span>
+                <span class="location-current">서울 강남구 테헤란로 123 ▼</span>
+            </div>
+            <button class="nav-icon" aria-label="알림">🔔</button>
+        </header>
+
+        <!-- Main Content Area (Dynamic Content) -->
+        <main id="app-content">
+            <!-- Home View will be rendered here by app.js -->
+            <div class="shimmer-loading">
+                <div class="restaurant-card shimmer" style="height: 250px;"></div>
+                <div class="restaurant-card shimmer" style="height: 250px;"></div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" id="nav-home" aria-label="홈">
+                <span class="nav-icon">🏠</span>
+                <span>홈</span>
+            </button>
+            <button class="nav-item" id="nav-search" aria-label="검색">
+                <span class="nav-icon">🔍</span>
+                <span>검색</span>
+            </button>
+            <button class="nav-item" id="nav-orders" aria-label="주문 내역">
+                <span class="nav-icon">📋</span>
+                <span>주문</span>
+            </button>
+            <button class="nav-item" id="nav-profile" aria-label="마이페이지">
+                <span class="nav-icon">👤</span>
+                <span>내 정보</span>
+            </button>
+        </nav>
+
+        <!-- Floating Cart Button (Hidden by default) -->
+        <button id="cart-btn" class="cart-floating-btn hidden">
+            <span>장바구니 보기</span>
+            <span id="cart-total">0원</span>
+        </button>
+    </div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+
+    <!-- Floating Back to Portal Button -->
+    <style>
+        .back-to-portal-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(5px);
+        }
+        .back-to-portal-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #0f172a;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+    </style>
+    <a href="../../../../../index.html" class="back-to-portal-btn">
+        <span>🏠</span> Showcase Portal
+    </a>
+
+</body>
+</html>

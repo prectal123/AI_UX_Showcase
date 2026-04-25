@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVibe | Video Share & Viewing Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo" id="btn-home-logo">
+                <i class="fas fa-play-circle logo-icon"></i>
+                <span>StreamVibe</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search videos..." id="search-input">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <button class="btn-upload" id="btn-upload-modal"><i class="fas fa-plus"></i> Upload</button>
+                <i class="far fa-bell" style="font-size: 20px; cursor: pointer;"></i>
+                <div class="profile-pic" id="btn-profile"></div>
+            </div>
+        </header>
+
+        <aside>
+            <nav>
+                <a href="#home" class="nav-item active" data-view="home">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#trending" class="nav-item" data-view="trending">
+                    <i class="fas fa-fire"></i> Trending
+                </a>
+                <a href="#subscriptions" class="nav-item" data-view="subscriptions">
+                    <i class="fas fa-users"></i> Subscriptions
+                </a>
+                
+                <div class="nav-section-title">Library</div>
+                <a href="#library" class="nav-item" data-view="library">
+                    <i class="fas fa-play-list"></i> History
+                </a>
+                <a href="#liked" class="nav-item" data-view="liked">
+                    <i class="fas fa-thumbs-up"></i> Liked Videos
+                </a>
+                <a href="#watch-later" class="nav-item" data-view="watch-later">
+                    <i class="fas fa-clock"></i> Watch Later
+                </a>
+
+                <div class="nav-section-title">Subscriptions</div>
+                <div id="sidebar-subscriptions">
+                    <!-- Dynamic subscriptions -->
+                </div>
+            </nav>
+        </aside>
+
+        <main id="main-content">
+            <!-- View content will be injected here -->
+        </main>
+
+        <!-- Upload Modal -->
+        <div class="modal-overlay" id="upload-modal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-upload">&times;</span>
+                <h2>Upload Video</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Share your story with the world.</p>
+                
+                <div class="upload-dropzone" id="dropzone">
+                    <i class="fas fa-cloud-upload-alt" style="font-size: 48px; color: var(--accent-color); margin-bottom: 16px;"></i>
+                    <p>Drag and drop video files to upload</p>
+                    <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">Your videos will be private until you publish them.</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" placeholder="Enter video title" id="upload-title">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea placeholder="Tell viewers about your video" rows="4" id="upload-desc"></textarea>
+                </div>
+                <button class="btn-upload" style="width: 100%; padding: 12px;" id="btn-publish">Publish Video</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Floating Back to Portal Button -->
+    <style>
+        .back-to-portal-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(5px);
+        }
+        .back-to-portal-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #0f172a;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+    </style>
+    <a href="../../../../../index.html" class="back-to-portal-btn">
+        <span>🏠</span> Showcase Portal
+    </a>
+
+</body>
+</html>

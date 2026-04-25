@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GourmetDash | Premium Food Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Home View -->
+        <div id="home-view" class="view active">
+            <header>
+                <div class="user-location">
+                    <span class="location-label">Deliver to</span>
+                    <span class="location-value">📍 123 Main St, Tech City ▼</span>
+                </div>
+                <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=FF5200&color=fff" alt="Profile" class="profile-pic" id="profile-btn">
+            </header>
+
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="Search for food, restaurants..." id="search-input">
+            </div>
+
+            <div class="categories-scroll" id="categories-list">
+                <!-- Categories will be injected here -->
+            </div>
+
+            <div class="section-header">
+                <h2>Popular Restaurants</h2>
+                <span style="color: var(--primary); font-weight: 600; cursor: pointer;">See all</span>
+            </div>
+
+            <div id="restaurant-list">
+                <!-- Restaurants will be injected here -->
+            </div>
+        </div>
+
+        <!-- Restaurant Detail View -->
+        <div id="detail-view" class="view">
+            <button class="back-btn" id="back-to-home">⬅️</button>
+            <div id="restaurant-details-content">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+
+        <!-- Cart View -->
+        <div id="cart-view" class="view">
+            <button class="back-btn" id="back-from-cart">⬅️</button>
+            <h2 style="margin-bottom: 24px;">Your Basket</h2>
+            <div id="cart-items">
+                <!-- Cart items will be injected here -->
+            </div>
+            <div id="cart-summary" style="margin-top: 32px; padding: 20px; background: white; border-radius: 16px; box-shadow: var(--shadow);">
+                <!-- Summary will be injected here -->
+            </div>
+            <button id="checkout-btn" style="width: 100%; padding: 18px; background: var(--primary); color: white; border: none; border-radius: 16px; font-weight: 700; font-size: 18px; margin-top: 24px; cursor: pointer;">Checkout Now</button>
+        </div>
+
+        <!-- Order Status View -->
+        <div id="status-view" class="view">
+            <div class="status-container">
+                <div class="status-animation">🍕</div>
+                <h2>Preparing your food...</h2>
+                <p style="color: var(--text-muted); margin-top: 8px;">Order #4829 is being crafted with love.</p>
+                
+                <div class="status-step">
+                    <div class="step-item completed" id="step-1">
+                        <div class="step-check">✓</div>
+                        <div>
+                            <div style="font-weight: 600;">Order Confirmed</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">We've received your order</div>
+                        </div>
+                    </div>
+                    <div class="step-item" id="step-2">
+                        <div class="step-check">2</div>
+                        <div>
+                            <div style="font-weight: 600;">Preparing Food</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">The chef is cooking your meal</div>
+                        </div>
+                    </div>
+                    <div class="step-item" id="step-3">
+                        <div class="step-check">3</div>
+                        <div>
+                            <div style="font-weight: 600;">On the way</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">Our rider is heading your way</div>
+                        </div>
+                    </div>
+                </div>
+                <button id="back-to-home-final" style="margin-top: 40px; padding: 12px 24px; border: 2px solid var(--primary); background: transparent; color: var(--primary); border-radius: 12px; font-weight: 600; cursor: pointer;">Return Home</button>
+            </div>
+        </div>
+        
+        <!-- Profile View -->
+        <div id="profile-view" class="view">
+            <button class="back-btn" id="back-from-profile">⬅️</button>
+            <div style="text-align: center; margin-bottom: 32px;">
+                <img src="https://ui-avatars.com/api/?name=Alex+Johnson&background=FF5200&color=fff" alt="Profile" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 16px;">
+                <h2>Alex Johnson</h2>
+                <p style="color: var(--text-muted);">alex.j@example.com</p>
+            </div>
+            
+            <div style="background: white; border-radius: 16px; padding: 8px; box-shadow: var(--shadow);">
+                <div style="padding: 16px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                    <span>📍</span> <span>Manage Addresses</span>
+                </div>
+                <div style="padding: 16px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                    <span>💳</span> <span>Payment Methods</span>
+                </div>
+                <div style="padding: 16px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                    <span>📜</span> <span>Order History</span>
+                </div>
+                <div style="padding: 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; color: var(--error);">
+                    <span>🚪</span> <span>Logout</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" id="nav-home">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </div>
+        <div class="nav-item" id="nav-search">
+            <span class="nav-icon">🔍</span>
+            <span>Search</span>
+        </div>
+        <div class="nav-item" id="nav-orders">
+            <span class="nav-icon">📋</span>
+            <span>Orders</span>
+        </div>
+        <div class="nav-item" id="nav-profile">
+            <span class="nav-icon">👤</span>
+            <span>Profile</span>
+        </div>
+    </nav>
+
+    <!-- Floating Cart Button -->
+    <div id="cart-btn" class="cart-floating-btn" style="display: none;">
+        <span>🛒</span>
+        <span id="cart-count">0 Items</span>
+        <span id="cart-total">$0.00</span>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Floating Back to Portal Button -->
+    <style>
+        .back-to-portal-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(5px);
+        }
+        .back-to-portal-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #0f172a;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+    </style>
+    <a href="../../../../../index.html" class="back-to-portal-btn">
+        <span>🏠</span> Showcase Portal
+    </a>
+
+</body>
+</html>

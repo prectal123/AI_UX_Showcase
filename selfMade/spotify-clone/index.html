@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Music - Premium Music Experience</title>
+    <meta name="description" content="Discover and stream your favorite music with Aura Music's premium interface.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i data-lucide="layers"></i>
+                <span>Aura Music</span>
+            </div>
+            
+            <nav class="nav-group">
+                <a href="#" class="nav-item active">
+                    <i data-lucide="home"></i>
+                    <span>홈</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="search"></i>
+                    <span>검색</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="library"></i>
+                    <span>내 라이브러리</span>
+                </a>
+            </nav>
+
+            <nav class="nav-group">
+                <div class="nav-item">
+                    <i data-lucide="plus-square"></i>
+                    <span>플레이리스트 만들기</span>
+                </div>
+                <div class="nav-item">
+                    <i data-lucide="heart"></i>
+                    <span>좋아요 표시한 곡</span>
+                </div>
+            </nav>
+
+            <div class="playlists">
+                <h3>내 플레이리스트</h3>
+                <nav class="nav-group">
+                    <a href="#" class="nav-item">Chill Lofi Study</a>
+                    <a href="#" class="nav-item">Cyberpunk 2077 Vibe</a>
+                    <a href="#" class="nav-item">Acoustic Mornings</a>
+                    <a href="#" class="nav-item">Deep Focus Tech</a>
+                    <a href="#" class="nav-item">Late Night Drive</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="navigation-controls">
+                    <!-- Navigation icons could go here -->
+                </div>
+                
+                <div class="search-bar">
+                    <i data-lucide="search" size="18"></i>
+                    <input type="text" placeholder="노래, 아티스트, 플레이리스트 검색">
+                </div>
+
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hajun" alt="User Avatar">
+                    <span>Hajun Cho</span>
+                    <i data-lucide="chevron-down" size="16"></i>
+                </div>
+            </header>
+
+            <div class="hero">
+                <div class="hero-content">
+                    <p class="hero-tag">검증된 플레이리스트</p>
+                    <h1 class="hero-title">Neon Nights</h1>
+                    <p>미래 지향적인 신스웨이브와 사이버펑크 비트의 정수</p>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>당신을 위한 추천</h2>
+                    <a href="#" style="color: var(--text-secondary); text-decoration: none; font-size: 0.8rem; font-weight: 600;">모두 보기</a>
+                </div>
+                <div class="grid" id="recommendations-grid">
+                    <!-- Content injected via JS -->
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <h2>최근 재생한 항목</h2>
+                </div>
+                <div class="grid" id="recent-grid">
+                    <!-- Content injected via JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Player Bar -->
+        <footer class="player">
+            <div class="now-playing">
+                <img src="assets/neon_nights.png" alt="Album Cover" class="now-playing-img" id="current-album-img">
+                <div class="now-playing-info">
+                    <h4 id="current-track-title">Synth City</h4>
+                    <p id="current-artist">AstroGlow</p>
+                </div>
+                <button class="control-btn" style="margin-left: 8px;">
+                    <i data-lucide="heart" size="18"></i>
+                </button>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button class="control-btn"><i data-lucide="shuffle" size="18"></i></button>
+                    <button class="control-btn"><i data-lucide="skip-back" size="20" fill="currentColor"></i></button>
+                    <button class="control-btn play" id="play-pause-btn"><i data-lucide="play" fill="currentColor"></i></button>
+                    <button class="control-btn"><i data-lucide="skip-forward" size="20" fill="currentColor"></i></button>
+                    <button class="control-btn"><i data-lucide="repeat" size="18"></i></button>
+                </div>
+                <div class="progress-container">
+                    <span>2:14</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%;"></div>
+                    </div>
+                    <span>4:32</span>
+                </div>
+            </div>
+
+            <div class="extra-controls">
+                <button class="control-btn"><i data-lucide="mic-2" size="18"></i></button>
+                <button class="control-btn"><i data-lucide="list-music" size="18"></i></button>
+                <button class="control-btn"><i data-lucide="speaker" size="18"></i></button>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <i data-lucide="volume-2" size="18"></i>
+                    <div class="volume-bar">
+                        <div class="volume-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>

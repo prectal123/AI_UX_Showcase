@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Music | Experience the Rhythm</title>
+    <meta name="description" content="Aura Music - A premium music sharing and playing prototype with a focus on predictability and seamless user experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="main-nav">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span class="logo-text">Aura</span>
+            </div>
+            <ul class="nav-links">
+                <li class="active" id="nav-home" data-view="home">
+                    <i data-lucide="home"></i>
+                    <span>Home</span>
+                </li>
+                <li id="nav-explore" data-view="explore">
+                    <i data-lucide="compass"></i>
+                    <span>Explore</span>
+                </li>
+                <li id="nav-library" data-view="library">
+                    <i data-lucide="library"></i>
+                    <span>Library</span>
+                </li>
+            </ul>
+            <div class="sidebar-section">
+                <h3>Your Playlists</h3>
+                <ul class="playlist-list" id="sidebar-playlists">
+                    <!-- Dynamic Playlists -->
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="history-controls">
+                    <button id="btn-back" title="Go Back">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button id="btn-forward" title="Go Forward">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+                <div class="search-bar">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Search songs, artists, or albums..." id="global-search">
+                </div>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User Profile" class="avatar">
+                    <span class="username">Alex Rivera</span>
+                </div>
+            </header>
+
+            <section id="content-view" class="view-container">
+                <!-- Views will be injected here -->
+            </section>
+        </main>
+
+        <!-- Share Modal -->
+        <div id="share-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Share this Track</h2>
+                    <button class="btn-icon" id="close-modal"><i data-lucide="x"></i></button>
+                </div>
+                <div class="share-options">
+                    <div class="share-item" onclick="copyMockLink()">
+                        <div class="share-icon"><i data-lucide="copy"></i></div>
+                        <span>Copy Link</span>
+                    </div>
+                    <div class="share-item">
+                        <div class="share-icon" style="background: #1877f2;"><i data-lucide="facebook"></i></div>
+                        <span>Facebook</span>
+                    </div>
+                    <div class="share-item">
+                        <div class="share-icon" style="background: #1da1f2;"><i data-lucide="twitter"></i></div>
+                        <span>Twitter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Player Bar -->
+        <footer class="player-bar">
+            <div class="current-track">
+                <div class="track-art-wrapper">
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=200&h=200&auto=format&fit=crop" alt="Track Art" id="player-art">
+                </div>
+                <div class="track-info">
+                    <h4 id="player-title">Select a track</h4>
+                    <p id="player-artist">Artist name</p>
+                </div>
+                <button class="btn-icon heart-btn" id="player-favorite">
+                    <i data-lucide="heart"></i>
+                </button>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button class="btn-icon" id="btn-shuffle" title="Shuffle">
+                        <i data-lucide="shuffle"></i>
+                    </button>
+                    <button class="btn-icon" id="btn-prev">
+                        <i data-lucide="skip-back"></i>
+                    </button>
+                    <button class="btn-icon play-pause" id="btn-play-pause">
+                        <i data-lucide="play" fill="currentColor"></i>
+                    </button>
+                    <button class="btn-icon" id="btn-next">
+                        <i data-lucide="skip-forward"></i>
+                    </button>
+                    <button class="btn-icon" id="btn-repeat" title="Repeat">
+                        <i data-lucide="repeat"></i>
+                    </button>
+                </div>
+                <div class="progress-container">
+                    <span class="time-current">0:00</span>
+                    <div class="progress-bar" id="track-progress">
+                        <div class="progress-fill"></div>
+                        <div class="progress-knob"></div>
+                    </div>
+                    <span class="time-total">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-controls">
+                <button class="btn-icon" id="btn-lyrics" title="Lyrics">
+                    <i data-lucide="mic-2"></i>
+                </button>
+                <button class="btn-icon" id="btn-queue" title="Queue">
+                    <i data-lucide="list-music"></i>
+                </button>
+                <div class="volume-slider-wrapper">
+                    <i data-lucide="volume-2"></i>
+                    <div class="progress-bar volume-bar" id="volume-progress">
+                        <div class="progress-fill" style="width: 70%"></div>
+                        <div class="progress-knob"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Toast Notification Area -->
+        <div id="toast-container"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>
